@@ -2,11 +2,9 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ template "wikijs.fullname" . }}
-  annotations:
-    volback.backup: {{ .Values.persistence.volbackBackup | quote }}
+  name: {{ template "wiki.fullname" . }}
   labels:
-    app: {{ template "wikijs.name" . }}
+    app: {{ template "wiki.name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
